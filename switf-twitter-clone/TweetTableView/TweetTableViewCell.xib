@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="711" id="KGk-i7-Jjw" customClass="TweetTableViewCell" customModule="switf_twitter_clone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="354"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="353.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="5Hd-bI-2ca">
+                        <rect key="frame" x="8" y="8" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="LaG-jE-Upf"/>
+                            <constraint firstAttribute="width" constant="44" id="wCr-Wc-WSD"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6to-1A-BeE">
+                        <rect key="frame" x="60" y="8" width="44.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="tk9-ac-2Qu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKh-3J-Owp">
+                        <rect key="frame" x="60" y="29" width="252" height="316.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="xKh-3J-Owp" secondAttribute="bottom" constant="8" id="47n-v1-txP"/>
+                    <constraint firstAttribute="trailing" secondItem="xKh-3J-Owp" secondAttribute="trailing" constant="8" id="6dN-lj-PDA"/>
+                    <constraint firstItem="6to-1A-BeE" firstAttribute="leading" secondItem="5Hd-bI-2ca" secondAttribute="trailing" constant="8" id="Evn-kC-HuQ"/>
+                    <constraint firstItem="6to-1A-BeE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="HNF-wl-2kX"/>
+                    <constraint firstItem="xKh-3J-Owp" firstAttribute="top" secondItem="6to-1A-BeE" secondAttribute="bottom" id="Kvn-VZ-Lyw"/>
+                    <constraint firstItem="5Hd-bI-2ca" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="W2e-qW-gKB"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6to-1A-BeE" secondAttribute="trailing" constant="8" id="eeJ-mh-7Wm"/>
+                    <constraint firstItem="5Hd-bI-2ca" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="iKo-KT-aQQ"/>
+                    <constraint firstItem="xKh-3J-Owp" firstAttribute="leading" secondItem="5Hd-bI-2ca" secondAttribute="trailing" constant="8" id="oEQ-E4-vMQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="avatarImageView" destination="5Hd-bI-2ca" id="Dp6-k0-o40"/>
+                <outlet property="nameLabel" destination="6to-1A-BeE" id="62C-VF-wFX"/>
+                <outlet property="tweetLabel" destination="xKh-3J-Owp" id="VWT-Kx-Hzx"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="382"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="default-avatar" width="264" height="280"/>
+    </resources>
+</document>
