@@ -36,18 +36,28 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKh-3J-Owp">
-                        <rect key="frame" x="60" y="29" width="252" height="316.5"/>
+                        <rect key="frame" x="60" y="37" width="252" height="308.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaG-hK-h2t">
+                        <rect key="frame" x="108.5" y="8" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="WaG-hK-h2t" firstAttribute="leading" secondItem="6to-1A-BeE" secondAttribute="trailing" constant="4" id="2To-Mo-mL6"/>
                     <constraint firstAttribute="bottom" secondItem="xKh-3J-Owp" secondAttribute="bottom" constant="8" id="47n-v1-txP"/>
                     <constraint firstAttribute="trailing" secondItem="xKh-3J-Owp" secondAttribute="trailing" constant="8" id="6dN-lj-PDA"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WaG-hK-h2t" secondAttribute="trailing" id="8K7-ah-fMt"/>
+                    <constraint firstItem="WaG-hK-h2t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="8yM-AO-hH4"/>
                     <constraint firstItem="6to-1A-BeE" firstAttribute="leading" secondItem="5Hd-bI-2ca" secondAttribute="trailing" constant="8" id="Evn-kC-HuQ"/>
                     <constraint firstItem="6to-1A-BeE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="HNF-wl-2kX"/>
-                    <constraint firstItem="xKh-3J-Owp" firstAttribute="top" secondItem="6to-1A-BeE" secondAttribute="bottom" id="Kvn-VZ-Lyw"/>
+                    <constraint firstItem="xKh-3J-Owp" firstAttribute="top" secondItem="6to-1A-BeE" secondAttribute="bottom" constant="8" id="Kvn-VZ-Lyw"/>
+                    <constraint firstItem="xKh-3J-Owp" firstAttribute="top" secondItem="WaG-hK-h2t" secondAttribute="bottom" constant="8" id="TAH-aM-kpW"/>
                     <constraint firstItem="5Hd-bI-2ca" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="W2e-qW-gKB"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6to-1A-BeE" secondAttribute="trailing" constant="8" id="eeJ-mh-7Wm"/>
                     <constraint firstItem="5Hd-bI-2ca" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="iKo-KT-aQQ"/>
@@ -59,11 +69,12 @@
                 <outlet property="avatarImageView" destination="5Hd-bI-2ca" id="Dp6-k0-o40"/>
                 <outlet property="nameLabel" destination="6to-1A-BeE" id="62C-VF-wFX"/>
                 <outlet property="tweetLabel" destination="xKh-3J-Owp" id="VWT-Kx-Hzx"/>
+                <outlet property="usernameLabel" destination="WaG-hK-h2t" id="OhJ-xS-t2a"/>
             </connections>
             <point key="canvasLocation" x="25" y="382"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="default-avatar" width="264" height="280"/>
+        <image name="default-avatar" width="500" height="500"/>
     </resources>
 </document>

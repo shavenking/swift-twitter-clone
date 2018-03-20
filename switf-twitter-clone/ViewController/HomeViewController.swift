@@ -1,31 +1,28 @@
 import UIKit
 
+fileprivate func makeTweets(number: Int) -> [Tweet] {
+    let names = ["Hugh", "Andy", "Tsai", "孔子"]
+    let usernames = ["gymnastneedy", "burysurgery", "cramponsbasalt", "chevroletancestor"]
+    let sentences = ["I didn't go to school yesterday.", "Excuse me, but I feel sick.", "Where is she from?", "學而時習之，不亦說乎？有朋自遠方來，不亦樂乎？人不知而不慍，不亦君子乎？", "其為人也孝弟，而好犯上者，鮮矣；不好犯上，而好作亂者，未之有也。君子務本，本立而道生。孝弟也者，其為仁之本與！"]
+
+    func random<T>(_ source: [T]) -> T {
+        return source[Int(arc4random_uniform(UInt32(source.count)))]
+    }
+
+    var tweets = [Tweet]()
+
+    for _ in 0..<number {
+        tweets.append(
+            Tweet(name: random(names), username: random(usernames), content: random(sentences))
+        )
+    }
+
+    return tweets
+}
+
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    let tweets = [
-        Tweet(name: "Hugh", content: "hello"),
-        Tweet(name: "Andy", content: "wow\nqowiejqowi qowiejqwoie\nqwoiejqw qwoeijqwoiejqwoie qjwoei jqoiwe \noqiwej qowie jqwoiej qowiej qoiwej \nqwopie jqwoie jqwoie jqwoiej qwjeio \noq ijweqoiw jeqiowej qoiwej qoie"),
-        Tweet(name: "Hugh", content: "hello"),
-        Tweet(name: "Andy", content: "wow\nqowiejqowi qowiejqwoie\nqwoiejqw qwoeijqwoiejqwoie qjwoei jqoiwe \noqiwej qowie jqwoiej qowiej qoiwej \nqwopie jqwoie jqwoie jqwoiej qwjeio \noq ijweqoiw jeqiowej qoiwej qoie"),
-        Tweet(name: "Hugh", content: "hello"),
-        Tweet(name: "Andy", content: "wow\nqowiejqowi qowiejqwoie\nqwoiejqw qwoeijqwoiejqwoie qjwoei jqoiwe \noqiwej qowie jqwoiej qowiej qoiwej \nqwopie jqwoie jqwoie jqwoiej qwjeio \noq ijweqoiw jeqiowej qoiwej qoie"),
-        Tweet(name: "Hugh", content: "hello"),
-        Tweet(name: "Andy", content: "wow\nqowiejqowi qowiejqwoie\nqwoiejqw qwoeijqwoiejqwoie qjwoei jqoiwe \noqiwej qowie jqwoiej qowiej qoiwej \nqwopie jqwoie jqwoie jqwoiej qwjeio \noq ijweqoiw jeqiowej qoiwej qoie"),
-        Tweet(name: "Hugh", content: "hello"),
-        Tweet(name: "Andy", content: "wow\nqowiejqowi qowiejqwoie\nqwoiejqw qwoeijqwoiejqwoie qjwoei jqoiwe \noqiwej qowie jqwoiej qowiej qoiwej \nqwopie jqwoie jqwoie jqwoiej qwjeio \noq ijweqoiw jeqiowej qoiwej qoie"),
-        Tweet(name: "Hugh", content: "hello"),
-        Tweet(name: "Andy", content: "wow\nqowiejqowi qowiejqwoie\nqwoiejqw qwoeijqwoiejqwoie qjwoei jqoiwe \noqiwej qowie jqwoiej qowiej qoiwej \nqwopie jqwoie jqwoie jqwoiej qwjeio \noq ijweqoiw jeqiowej qoiwej qoie"),
-        Tweet(name: "Hugh", content: "hello"),
-        Tweet(name: "Andy", content: "wow\nqowiejqowi qowiejqwoie\nqwoiejqw qwoeijqwoiejqwoie qjwoei jqoiwe \noqiwej qowie jqwoiej qowiej qoiwej \nqwopie jqwoie jqwoie jqwoiej qwjeio \noq ijweqoiw jeqiowej qoiwej qoie"),
-        Tweet(name: "Hugh", content: "hello"),
-        Tweet(name: "Andy", content: "wow\nqowiejqowi qowiejqwoie\nqwoiejqw qwoeijqwoiejqwoie qjwoei jqoiwe \noqiwej qowie jqwoiej qowiej qoiwej \nqwopie jqwoie jqwoie jqwoiej qwjeio \noq ijweqoiw jeqiowej qoiwej qoie"),
-        Tweet(name: "Hugh", content: "hello"),
-        Tweet(name: "Andy", content: "wow\nqowiejqowi qowiejqwoie\nqwoiejqw qwoeijqwoiejqwoie qjwoei jqoiwe \noqiwej qowie jqwoiej qowiej qoiwej \nqwopie jqwoie jqwoie jqwoiej qwjeio \noq ijweqoiw jeqiowej qoiwej qoie"),
-        Tweet(name: "Hugh", content: "hello"),
-        Tweet(name: "Andy", content: "wow\nqowiejqowi qowiejqwoie\nqwoiejqw qwoeijqwoiejqwoie qjwoei jqoiwe \noqiwej qowie jqwoiej qowiej qoiwej \nqwopie jqwoie jqwoie jqwoiej qwjeio \noq ijweqoiw jeqiowej qoiwej qoie"),
-        Tweet(name: "Hugh", content: "hello"),
-        Tweet(name: "Andy", content: "wow\nqowiejqowi qowiejqwoie\nqwoiejqw qwoeijqwoiejqwoie qjwoei jqoiwe \noqiwej qowie jqwoiej qowiej qoiwej \nqwopie jqwoie jqwoie jqwoiej qwjeio \noq ijweqoiw jeqiowej qoiwej qoie")
-    ]
+    let tweets = makeTweets(number: 10)
 
     private func setupNavigationItem() {
         navigationItem.title = "Home"
@@ -68,8 +65,7 @@ extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TweetTableViewCell.self)) as! TweetTableViewCell
-        cell.nameLabel.text = tweets[indexPath.row].name
-        cell.tweetLabel.text = tweets[indexPath.row].content
+        cell.tweet = tweets[indexPath.row]
         return cell
     }
 }
