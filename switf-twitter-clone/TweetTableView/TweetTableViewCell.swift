@@ -23,6 +23,10 @@ class TweetTableViewCell: UITableViewCell {
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
         avatarImageView.layer.masksToBounds = true
 
+        commentButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        shareButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        heartButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+
         commentButton.setImage(commentButton.image(for: .normal)?.withRenderingMode(.alwaysOriginal), for: .normal)
         shareButton.setImage(shareButton.image(for: .normal)?.withRenderingMode(.alwaysOriginal), for: .normal)
         heartButton.setImage(heartButton.image(for: .normal)?.withRenderingMode(.alwaysOriginal), for: .normal)
