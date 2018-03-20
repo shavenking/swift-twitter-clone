@@ -22,12 +22,12 @@ fileprivate func makeTweets(number: Int) -> [Tweet] {
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    let tweets = makeTweets(number: 10)
+    var tweets = makeTweets(number: 10)
 
     private func setupNavigationItem() {
         navigationItem.title = "Home"
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon-pencil"), style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon-pencil"), style: .plain, target: self, action: #selector(presentTweetCreateViewController))
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "default-profile-avatar")!.withRenderingMode(.alwaysOriginal), style: .plain, target: nil, action: nil)
     }
 
@@ -56,6 +56,13 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: String(describing: TweetTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: TweetTableViewCell.self))
     }
+
+    @objc func presentTweetCreateViewController() {
+        let tweetCreateViewController = TweetCreateViewController()
+        tweetCreateViewController.delegate = self
+
+        present(tweetCreateViewController, animated: true)
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -67,5 +74,12 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TweetTableViewCell.self)) as! TweetTableViewCell
         cell.tweet = tweets[indexPath.row]
         return cell
+    }
+}
+
+extension HomeViewController: TweetCreateDelegate {
+    func didAdd(tweet: Tweet) {
+        tweets.append(tweet)
+        tableView.reloadData()
     }
 }
