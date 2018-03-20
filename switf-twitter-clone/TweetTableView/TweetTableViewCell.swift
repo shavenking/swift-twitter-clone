@@ -13,11 +13,19 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
 
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var heartButton: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
         avatarImageView.layer.masksToBounds = true
+
+        commentButton.setImage(commentButton.image(for: .normal)?.withRenderingMode(.alwaysOriginal), for: .normal)
+        shareButton.setImage(shareButton.image(for: .normal)?.withRenderingMode(.alwaysOriginal), for: .normal)
+        heartButton.setImage(heartButton.image(for: .normal)?.withRenderingMode(.alwaysOriginal), for: .normal)
     }
 
     override func prepareForReuse() {

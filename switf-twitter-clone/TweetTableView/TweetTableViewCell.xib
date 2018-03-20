@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKh-3J-Owp">
-                        <rect key="frame" x="60" y="37" width="252" height="308.5"/>
+                        <rect key="frame" x="60" y="37" width="252" height="278"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -47,27 +49,62 @@
                         <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="8wK-f8-q68">
+                        <rect key="frame" x="60" y="325" width="236" height="18"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7A-me-gHy">
+                                <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="M7A-me-gHy" secondAttribute="height" multiplier="1:1" id="oAH-8y-dap"/>
+                                </constraints>
+                                <state key="normal" image="icon-comment"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDG-df-884">
+                                <rect key="frame" x="109" y="0.0" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qDG-df-884" secondAttribute="height" multiplier="1:1" id="acq-KC-d33"/>
+                                </constraints>
+                                <state key="normal" image="icon-share"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnP-hl-pXV">
+                                <rect key="frame" x="218" y="0.0" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hnP-hl-pXV" secondAttribute="height" multiplier="1:1" id="4lS-TR-jtV"/>
+                                </constraints>
+                                <state key="normal" image="icon-heart"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="lXQ-jh-tF6"/>
+                        </constraints>
+                    </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="WaG-hK-h2t" firstAttribute="leading" secondItem="6to-1A-BeE" secondAttribute="trailing" constant="4" id="2To-Mo-mL6"/>
-                    <constraint firstAttribute="bottom" secondItem="xKh-3J-Owp" secondAttribute="bottom" constant="8" id="47n-v1-txP"/>
                     <constraint firstAttribute="trailing" secondItem="xKh-3J-Owp" secondAttribute="trailing" constant="8" id="6dN-lj-PDA"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WaG-hK-h2t" secondAttribute="trailing" id="8K7-ah-fMt"/>
                     <constraint firstItem="WaG-hK-h2t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="8yM-AO-hH4"/>
                     <constraint firstItem="6to-1A-BeE" firstAttribute="leading" secondItem="5Hd-bI-2ca" secondAttribute="trailing" constant="8" id="Evn-kC-HuQ"/>
                     <constraint firstItem="6to-1A-BeE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="HNF-wl-2kX"/>
                     <constraint firstItem="xKh-3J-Owp" firstAttribute="top" secondItem="6to-1A-BeE" secondAttribute="bottom" constant="8" id="Kvn-VZ-Lyw"/>
+                    <constraint firstItem="8wK-f8-q68" firstAttribute="leading" secondItem="5Hd-bI-2ca" secondAttribute="trailing" constant="8" id="SoM-1x-U1F"/>
                     <constraint firstItem="xKh-3J-Owp" firstAttribute="top" secondItem="WaG-hK-h2t" secondAttribute="bottom" constant="8" id="TAH-aM-kpW"/>
                     <constraint firstItem="5Hd-bI-2ca" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="W2e-qW-gKB"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6to-1A-BeE" secondAttribute="trailing" constant="8" id="eeJ-mh-7Wm"/>
                     <constraint firstItem="5Hd-bI-2ca" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="iKo-KT-aQQ"/>
                     <constraint firstItem="xKh-3J-Owp" firstAttribute="leading" secondItem="5Hd-bI-2ca" secondAttribute="trailing" constant="8" id="oEQ-E4-vMQ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="8wK-f8-q68" secondAttribute="bottom" id="rq9-ab-FPO"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="8wK-f8-q68" secondAttribute="trailing" constant="8" id="tJ0-BP-28a"/>
+                    <constraint firstItem="8wK-f8-q68" firstAttribute="top" secondItem="xKh-3J-Owp" secondAttribute="bottom" constant="10" id="w76-HO-AgA"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="avatarImageView" destination="5Hd-bI-2ca" id="Dp6-k0-o40"/>
+                <outlet property="commentButton" destination="M7A-me-gHy" id="O9j-sf-ZtC"/>
+                <outlet property="heartButton" destination="hnP-hl-pXV" id="dcY-E0-rqf"/>
                 <outlet property="nameLabel" destination="6to-1A-BeE" id="62C-VF-wFX"/>
+                <outlet property="shareButton" destination="qDG-df-884" id="pqI-FF-67z"/>
                 <outlet property="tweetLabel" destination="xKh-3J-Owp" id="VWT-Kx-Hzx"/>
                 <outlet property="usernameLabel" destination="WaG-hK-h2t" id="OhJ-xS-t2a"/>
             </connections>
@@ -76,5 +113,8 @@
     </objects>
     <resources>
         <image name="default-avatar" width="500" height="500"/>
+        <image name="icon-comment" width="24" height="24"/>
+        <image name="icon-heart" width="24" height="24"/>
+        <image name="icon-share" width="24" height="24"/>
     </resources>
 </document>
