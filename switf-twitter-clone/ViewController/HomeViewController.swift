@@ -61,7 +61,7 @@ class HomeViewController: UIViewController {
         let tweetCreateViewController = TweetCreateViewController()
         tweetCreateViewController.delegate = self
 
-        present(tweetCreateViewController, animated: true)
+        present(UINavigationController(rootViewController: tweetCreateViewController), animated: true)
     }
 }
 

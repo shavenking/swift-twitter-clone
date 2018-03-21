@@ -6,16 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TweetCreateViewController" customModule="switf_twitter_clone" customModuleProvider="target">
             <connections>
-                <outlet property="cancelButton" destination="Ynv-Cz-MEa" id="urT-8P-KeI"/>
                 <outlet property="scrollView" destination="Q3d-Zv-c9H" id="Pbo-bG-Uw2"/>
-                <outlet property="tweetButton" destination="86G-Cy-hZd" id="ttK-Lx-P55"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,48 +21,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ynv-Cz-MEa">
-                    <rect key="frame" x="18" y="28" width="24" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="24" id="aMc-XK-Vog"/>
-                        <constraint firstAttribute="width" secondItem="Ynv-Cz-MEa" secondAttribute="height" multiplier="1:1" id="hg7-Pi-UM0"/>
-                    </constraints>
-                    <color key="tintColor" red="0.12433589249849319" green="0.21550783514976501" blue="0.46669095754623413" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <state key="normal" title="Button" image="icon-x"/>
-                </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3d-Zv-c9H">
-                    <rect key="frame" x="18" y="75" width="286" height="493"/>
+                    <rect key="frame" x="9" y="28" width="302" height="540"/>
                 </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86G-Cy-hZd">
-                    <rect key="frame" x="238" y="25" width="66" height="30"/>
-                    <color key="backgroundColor" red="0.74226105213165283" green="0.78642314672470093" blue="0.87452226877212524" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="SmA-oj-7nh"/>
-                        <constraint firstAttribute="width" constant="66" id="s9O-no-mim"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <color key="tintColor" red="0.73834013938903809" green="0.78250104188919067" blue="0.87060075998306274" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <state key="normal" title="Tweet">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Q3d-Zv-c9H" secondAttribute="bottom" id="LJ7-5q-LMV"/>
-                <constraint firstItem="86G-Cy-hZd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="S43-Sw-JId"/>
-                <constraint firstItem="Ynv-Cz-MEa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="apl-Bj-nnL"/>
-                <constraint firstItem="Q3d-Zv-c9H" firstAttribute="top" secondItem="86G-Cy-hZd" secondAttribute="bottom" constant="20" id="jGb-gP-XgG"/>
-                <constraint firstItem="Q3d-Zv-c9H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="nG7-9L-oXW"/>
-                <constraint firstAttribute="trailing" secondItem="86G-Cy-hZd" secondAttribute="trailing" constant="16" id="qA1-Ag-e20"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Q3d-Zv-c9H" secondAttribute="trailing" constant="16" id="vfe-KL-bqn"/>
-                <constraint firstItem="Ynv-Cz-MEa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="whs-lz-6e4"/>
+                <constraint firstItem="Q3d-Zv-c9H" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="0vK-wu-d8g"/>
+                <constraint firstItem="Q3d-Zv-c9H" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="QaZ-aF-c1k"/>
+                <constraint firstItem="Q3d-Zv-c9H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="9" id="WLD-MC-xfE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Q3d-Zv-c9H" secondAttribute="trailing" constant="9" id="va0-hZ-aJS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="76" y="59"/>
         </view>
     </objects>
-    <resources>
-        <image name="icon-x" width="24" height="24"/>
-    </resources>
 </document>
