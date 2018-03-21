@@ -25,6 +25,8 @@ class TweetCreateViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
 
+    @IBOutlet weak var scrollViewButtonLayoutConstraint: NSLayoutConstraint!
+
     let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -65,6 +67,8 @@ class TweetCreateViewController: UIViewController {
         textView.frame = CGRect(x: 44, y: 0, width: scrollView.contentSize.width - 44, height: scrollView.contentSize.height)
 
         textView.font = .preferredFont(forTextStyle: .body)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
 
     @objc func didTouchUpInsideCancelButton() {
@@ -74,6 +78,15 @@ class TweetCreateViewController: UIViewController {
     @objc func didTouchUpInsideTweetButton() {
         delegate?.didAdd(tweet: Tweet(name: "Hugh", username: "shavenking", content: textView.text.trimmingCharacters(in: .whitespacesAndNewlines)))
         dismiss(animated: true)
+    }
+
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardBounds = notification.userInfo?["UIKeyboardBoundsUserInfoKey"] as? CGRect {
+            scrollViewButtonLayoutConstraint.constant = -keyboardBounds.height
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
     }
 }
 

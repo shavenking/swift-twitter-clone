@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TweetCreateViewController" customModule="switf_twitter_clone" customModuleProvider="target">
             <connections>
                 <outlet property="scrollView" destination="Q3d-Zv-c9H" id="Pbo-bG-Uw2"/>
+                <outlet property="scrollViewButtonLayoutConstraint" destination="QaZ-aF-c1k" id="wa5-RZ-Nkf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
