@@ -27,9 +27,7 @@ class TweetTableViewCell: UITableViewCell {
         shareButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         heartButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
-        commentButton.setImage(commentButton.image(for: .normal)?.withRenderingMode(.alwaysOriginal), for: .normal)
-        shareButton.setImage(shareButton.image(for: .normal)?.withRenderingMode(.alwaysOriginal), for: .normal)
-        heartButton.setImage(heartButton.image(for: .normal)?.withRenderingMode(.alwaysOriginal), for: .normal)
+        heartButton.addTarget(self, action: #selector(didTouchUpInsideHeartButton), for: .touchUpInside)
     }
 
     override func prepareForReuse() {
@@ -38,12 +36,20 @@ class TweetTableViewCell: UITableViewCell {
     }
 
     private func render(_ tweet: Tweet?) {
-        nameLabel.text = tweet?.name
-        usernameLabel.text = nil
-        tweetLabel.text = tweet?.content
+        guard let tweet = tweet else { return }
 
-        if let tweet = tweet {
-            usernameLabel.text = "@\(tweet.username)"
-        }
+        nameLabel.text = tweet.name
+        usernameLabel.text = "@\(tweet.username)"
+        tweetLabel.text = tweet.content
+
+        commentButton.tintColor = UIColor(red: 0.450936, green: 0.451016, blue: 0.450926, alpha: 1)
+        shareButton.tintColor = UIColor(red: 0.450936, green: 0.451016, blue: 0.450926, alpha: 1)
+        heartButton.tintColor = !tweet.isLiked ? UIColor(red: 0.450936, green: 0.451016, blue: 0.450926, alpha: 1) : .red
+    }
+
+    @objc func didTouchUpInsideHeartButton() {
+        heartButton.tintColor = .red
+        tweet?.isLiked = true
+        tweet?.likes["Hugh"] = true
     }
 }

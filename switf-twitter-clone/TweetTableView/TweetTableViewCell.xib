@@ -57,6 +57,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="M7A-me-gHy" secondAttribute="height" multiplier="1:1" id="oAH-8y-dap"/>
                                 </constraints>
+                                <color key="tintColor" red="0.45098350253807107" green="0.45098350253807107" blue="0.45098350253807107" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="icon-comment"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDG-df-884">
@@ -64,6 +65,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qDG-df-884" secondAttribute="height" multiplier="1:1" id="acq-KC-d33"/>
                                 </constraints>
+                                <color key="tintColor" red="0.45098350253807107" green="0.45098350253807107" blue="0.45098350253807107" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="icon-share"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnP-hl-pXV">
@@ -71,6 +73,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hnP-hl-pXV" secondAttribute="height" multiplier="1:1" id="4lS-TR-jtV"/>
                                 </constraints>
+                                <color key="tintColor" red="0.45098350253807107" green="0.45098350253807107" blue="0.45098350253807107" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="icon-heart"/>
                             </button>
                         </subviews>

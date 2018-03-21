@@ -14,7 +14,7 @@ fileprivate func makeTweets(number: Int) -> [Tweet] {
 
     for _ in 0..<number {
         tweets.append(
-            Tweet(name: random(names), username: random(usernames), content: random(sentences), createdAt: random(dates), updatedAt: random(dates))
+            Tweet(name: random(names), username: random(usernames), content: random(sentences), createdAt: random(dates), updatedAt: random(dates), likes: [String: Bool](), isLiked: false)
         )
     }
 
