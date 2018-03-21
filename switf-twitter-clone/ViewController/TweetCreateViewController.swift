@@ -76,7 +76,7 @@ class TweetCreateViewController: UIViewController {
     }
 
     @objc func didTouchUpInsideTweetButton() {
-        delegate?.didAdd(tweet: Tweet(name: "Hugh", username: "shavenking", content: textView.text.trimmingCharacters(in: .whitespacesAndNewlines)))
+        delegate?.didAdd(tweet: Tweet(name: "Hugh", username: "shavenking", content: textView.text.trimmingCharacters(in: .whitespacesAndNewlines), createdAt: Date(), updatedAt: Date()))
         dismiss(animated: true)
     }
 
